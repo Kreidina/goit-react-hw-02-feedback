@@ -1,0 +1,13 @@
+.title {
+  color: black;
+}
+.btnItem {
+  color: aquamarine;
+}
+.btnList {
+  list-style: none;
+  color: yellow;
+}
+.btnReviews {
+  color: rgb(5, 68, 47);
+}
