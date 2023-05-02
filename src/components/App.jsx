@@ -25,10 +25,12 @@ class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    let positiveFeedback = 0;
     const { good } = this.state;
     const total = this.countTotalFeedback();
-    positiveFeedback += (good / total) * 100;
+    if (total === 0) {
+      return '0';
+    }
+    const positiveFeedback = (good / total) * 100;
     return positiveFeedback.toFixed(0);
   };
 
@@ -47,9 +49,7 @@ class App extends Component {
             neutral={neutral}
             bad={bad}
             total={total}
-            positivePercentage={
-              positiveFeedback === 'NaN' ? 0 : positiveFeedback
-            }
+            positivePercentage={positiveFeedback}
           />
         </Section>
       </div>
